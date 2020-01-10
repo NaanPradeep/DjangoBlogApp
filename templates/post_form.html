@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class=" container-fluid" style="margin-top: 80px;">
+	<h1 class="text-center">Post Your Article</h1>
+	<div class="container padding">
+		<div class="col-md-12">			
+			<form class="form-horizontal templatemo-create-account templatemo-container" enctype="multipart/form-data" method="POST">
+				{% csrf_token %}
+					{{ form|crispy }}
+				</div>	
+				<button class="btn btn-primary" type="submit">Post</button>			    	
+		      </form>		      
+		</div>
+	</div>
+</div>
+{% endblock %}
